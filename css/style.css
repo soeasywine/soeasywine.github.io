@@ -96,7 +96,10 @@ h3 {
     line-height: 1.2;
     margin-top: 20px;
 }
-h4,
+h4 {
+    font-size: 30px;
+    font-weight: normal;
+}
 h5,
 h6 { font-weight: 300 }
 
@@ -903,6 +906,10 @@ SECTIONS
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
+}
+#contact-form div {
+    width: 100%;
+    float: left;
 }
 #contact-form textarea:focus,
 #contact-form input:focus { background: #E02217 }

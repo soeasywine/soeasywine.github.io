@@ -67,11 +67,13 @@
             <div class="wrap">
                 <div class="box">
                     <!-- SECTION HOME CONTENT -->
-                    <h1>Soyez nos premiers testeurs</h1>
+                    <h1>Toujours une bouteille à ton goût</h1>
+                    <p>Tu ne sais pas quelle bouteille acheter pour ce soir ? Tu ne sais pas quelle bouteille lui offrir ? Vérifie instantanément que la bouteille que tu as dans les mains va plaire.</p>
+                    <h4>Soyez nos premiers testeurs</h4>
                     <p>Pour être tenu informé de nos évènements dégustation et du lancement de l'application mobile.
                     <br>Prochainement sur iOS et Android! </p>
                     <form role="form" method="post" id="contact-form">
-                        <input type="email" placeholder="Email" name="Email" id="Email" required><br>
+                        <input type="email" placeholder="Email" name="Email" id="Email" required>
                         <div id="success"></div>
                     </form>
                     <a href="#" class="simple-button" onclick="sendMail()"><span class="icon .flaticon-download7"></span>M'inscrire</a>
@@ -118,8 +120,10 @@
 var myDataRef = new Firebase('https://soeasywine.firebaseio.com/');
 function sendMail() {
     var mail = $("#Email").val();
-    console.log(mail);
-    myDataRef.push({email: mail, time: new Date()});
+    if (mail != "") {
+        myDataRef.push({email: mail, time: new Date()});
+        $("#success").text("Merci, votre souscription a bien été prise en compte !");
+    }
 };
     </script>
 </body>
