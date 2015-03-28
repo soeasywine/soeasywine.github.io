@@ -19,9 +19,10 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="fonts/flaticon.css" />
-   <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
     <!-- JQUERY -->
     <script src="js/jquery.min.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
 </head>
 
 <body> 
@@ -58,13 +59,14 @@
                     <!-- SECTION HOME CONTENT -->
                     <h1>Soyez nos premiers testeurs</h1>
                     <p>Pour être tenu informé de nos évènements dégustation et du lancement de l'application mobile.
-                    <br> Prochainement sur iOS et Android!</p>
+                    <br>Prochainement sur iOS et Android! </p>
                     <form role="form" method="post" id="contact-form">
                         <input type="email" placeholder="Email" name="Email" id="Email" required><br>
                         <div id="success"></div>
                     </form>
-                    <a href="#" class="simple-button"><span class="icon .flaticon-download7"></span>M'inscrire</a> </div>
+                    <a href="#" class="simple-button" onclick="sendMail()"><span class="icon .flaticon-download7"></span>M'inscrire</a>
                     <!-- END SECTION HOME CONTENT -->
+                </div>
             </div>
         </div>
         <!-- END SECTION HOME -->
@@ -99,7 +101,14 @@
     <script src="js/cbpFWTabs.js"></script>
     <script src="js/jquery.sidr.min.js"></script>
     <script src="js/scripts.js"></script>
-    <script type="text/javascript" src="js/video.js"></script> 
-
+    <script type="text/javascript" src="js/video.js"></script>
+    <script>
+var mail = $("#Email").val();
+console.log(mail);
+var myDataRef = new Firebase('https://soeasywine.firebaseio.com/');
+function sendMail() {
+    myDataRef.push({email: mail, time: new Date()});
+};
+    </script>
 </body>
 </html>
