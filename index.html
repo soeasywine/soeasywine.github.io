@@ -120,8 +120,8 @@
 var firebaseRef = new Firebase('https://soeasywine.firebaseio.com/');
 function sendMail() {
     var mail = $("#Email").val();
-    console.log(mail);
     firebaseRef.push({email: mail, time: new Date()});
+    $("#success").text("Merci, votre inscription a bien été prise en compte !");
 };
 
 var firebaseCountRef = new Firebase('https://soeasywine.firebaseio.com/usercount');
@@ -129,7 +129,6 @@ firebaseCountRef.once("value", function(snapshot) {
 // do some stuff once
     if ((snapshot.val() !== null)){
         var value = snapshot.val();
-        console.log(value);
         for (var prop in value) {
             firebaseCountRef.child(prop).update({usercount: value[prop].usercount+1, time: new Date()});
         }
