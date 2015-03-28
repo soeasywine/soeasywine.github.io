@@ -76,7 +76,7 @@
                         <input type="email" placeholder="Email" name="Email" id="Email" required>
                         <div id="success"></div>
                     </form>
-                    <a href="#" class="simple-button" onclick="sendMail()"><span class="icon .flaticon-download7"></span>M'inscrire</a>
+                    <a href="#" class="simple-button" onclick="sendMail()" id="submit"><span class="icon .flaticon-download7"></span>M'inscrire</a>
                     <!-- END SECTION HOME CONTENT -->
                 </div>
             </div>
@@ -122,6 +122,7 @@ function sendMail() {
     var mail = $("#Email").val();
     firebaseRef.push({email: mail, time: new Date()});
     $("#success").text("Merci, votre inscription a bien été prise en compte !");
+    $("#submit").hide();
 };
 
 var firebaseCountRef = new Firebase('https://soeasywine.firebaseio.com/usercount');
