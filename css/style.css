@@ -936,3 +936,7 @@ background: #E02217;}
     background: #fff;
     color: #111;
 }
+
+#fp-nav {
+    display: none;
+}
