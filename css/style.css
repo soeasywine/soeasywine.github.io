@@ -43,6 +43,7 @@ body {
     height: 100%;
     padding: 0;
     overflow: hidden;
+    background-color: #9b9b9b;
 }
 a {
     color: #fff;
