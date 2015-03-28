@@ -115,10 +115,10 @@
     <script src="js/scripts.js"></script>
     <script type="text/javascript" src="js/video.js"></script>
     <script>
-var mail = $("#Email").val();
-console.log(mail);
 var myDataRef = new Firebase('https://soeasywine.firebaseio.com/');
 function sendMail() {
+    var mail = $("#Email").val();
+    console.log(mail);
     myDataRef.push({email: mail, time: new Date()});
 };
     </script>
